@@ -13,26 +13,14 @@ fn rand_255()->u8{
 
 // public function to interface with main
 pub fn rand_num(lim:u8)->u8{
-    // when the limit is 231 rand_255 is called repetedly until a value within range is found
-    if lim == 231{
-       let mut res = rand_255();
-       while res>231{
+    
+    let mut res = rand_255();
+    // repeatedly runs rand_255 until a number within the given range is generated
+    while res>lim{
            res = rand_255();
        } 
        return res;
-    }
-
-    // when the limit is 255 rand_255 is called normally 
-    else if lim == 255{
-        return rand_255();
-    }
-    
-    // otherwise the program quits and gives a message
-    else{
-        panic!("Invalid limit");
-    
-    }
-}
+   }
 
 #[cfg(test)]
 mod tests {
