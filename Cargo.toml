@@ -1,0 +1,17 @@
+[package]
+name = "random_int"
+version = "0.1.0"
+authors = ["rashik"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "mylib"
+path = "src/lib.rs"
+
+[[bin]]
+name = "mybin"
+path = "src/main.rs"
+
+[dependencies]
+magic-num = { git = "https://github.com/cfilipescu/magic-num.git", branch = "main"}
